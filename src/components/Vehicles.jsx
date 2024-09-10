@@ -25,6 +25,46 @@ const Vehicles = () => {
           <img src={icon_2} alt='' />
         </div>
       </div>
+      <div className='info'>
+        <div className='text'>
+          <h3>Coche 1</h3>
+          <h4>Matrícula: 1234ABC</h4>
+          <p>En Plaza Virgen de Amargura</p>
+        </div>
+        <div className='icon'>
+          <img src={icon_1} alt='' />
+        </div>
+      </div>
+      <div className='info'>
+        <div className='text'>
+          <h3>Coche 2</h3>
+          <h4>Matrícula: SE5678DE</h4>
+          <p>Fuera</p>
+        </div>
+        <div className='icon'>
+          <img src={icon_2} alt='' />
+        </div>
+      </div>
+      <div className='info'>
+        <div className='text'>
+          <h3>Coche 1</h3>
+          <h4>Matrícula: 1234ABC</h4>
+          <p>En Plaza Virgen de Amargura</p>
+        </div>
+        <div className='icon'>
+          <img src={icon_1} alt='' />
+        </div>
+      </div>
+      <div className='info'>
+        <div className='text'>
+          <h3>Coche 2</h3>
+          <h4>Matrícula: SE5678DE</h4>
+          <p>Fuera</p>
+        </div>
+        <div className='icon'>
+          <img src={icon_2} alt='' />
+        </div>
+      </div>
     </Wrapper>
   )
 }

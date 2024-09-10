@@ -7,7 +7,7 @@ const NavbarTop = () => {
       <div className='section'>
         <div className='section-center'>
           <h1>Hola, Garik!</h1>
-          <UserButton/>
+          <UserButton />
         </div>
       </div>
     </Wrapper>
@@ -17,6 +17,10 @@ export default NavbarTop
 
 const Wrapper = styled.div`
   border-bottom: var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #1f2937;
 
   .section {
     padding-bottom: 0.5rem;

@@ -16,7 +16,8 @@ const MisVehiculos = () => {
 export default MisVehiculos
 
 const Wrapper = styled.main`
-  h2{
+  background: var(--backgroundColor);
+  h2 {
     padding-top: 1rem;
   }
 `

@@ -58,11 +58,9 @@
 
 body {
     font-family: var(--bodyFont);
-    background: var(--backgroundColor);
     color: var(--textColor);
     line-height: 1.5;
     font-size: 0.875rem;
-    height: 100vh;
 }
 
 h1 {
