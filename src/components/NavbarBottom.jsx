@@ -1,13 +1,15 @@
 import styled from 'styled-components'
-import UserButton from './UserButton'
+import { links } from '../utils/constants'
+import Button from './Button'
 
 const NavbarBottom = () => {
+  const navbarLinks = links.filter((link) => link.id > 1)
   return (
     <Wrapper>
       <div className='navbar'>
-        <UserButton />
-        <UserButton />
-        <UserButton />
+        {navbarLinks.map((link) => (
+          <Button key={link.id} icon={link.icon} />
+        ))}
       </div>
     </Wrapper>
   )
@@ -15,17 +17,16 @@ const NavbarBottom = () => {
 export default NavbarBottom
 
 const Wrapper = styled.nav`
+  border-top: var(--border);
   position: sticky;
   bottom: 0;
   z-index: 1000;
   background-color: #030712;
 
-  .navbar{
-    padding: 0.5rem 0.75rem;
+  .navbar {
+    padding: 0.75rem 1.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-
-  
 `

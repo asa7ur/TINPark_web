@@ -1,29 +1,29 @@
 import styled from 'styled-components'
-import { FaUserCircle } from 'react-icons/fa'
 
-const UserButton = () => {
+const Button = ({ icon: Icon }) => {
   return (
     <Wrapper>
       <div className='styled-circle'>
-        <FaUserCircle className='icon' />
+        <Icon className='icon' />
       </div>
     </Wrapper>
   )
 }
-export default UserButton
+
+export default Button
 
 const Wrapper = styled.div`
   .icon {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .styled-circle {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background: radial-gradient(circle at 35% 30%, #374151, #030712);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25),
-      /* Outer shadow */ 0px 0px 20px rgba(0, 0, 0, 0.25); /* Inner shadow */
+      0px 0px 20px rgba(0, 0, 0, 0.25);
     position: relative;
     display: flex;
     align-items: center;
@@ -43,7 +43,7 @@ const Wrapper = styled.div`
       rgba(55, 65, 81, 0.5),
       rgba(3, 7, 18, 0.5)
     );
-    border: 1.5px solid rgba(255, 255, 255, 0.5); /* Overlay effect */
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
     mix-blend-mode: overlay;
     pointer-events: none;
   }
