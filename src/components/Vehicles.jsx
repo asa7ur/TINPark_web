@@ -1,70 +1,25 @@
 import styled from 'styled-components'
-import icon_1 from '../assets/MercedesBenz.png'
-import icon_2 from '../assets/BMW.png'
+import {cars} from '../utils/constants'
 
 const Vehicles = () => {
   return (
     <Wrapper>
-      <div className='info'>
-        <div className='text'>
-          <h3>Coche 1</h3>
-          <h4>Matrícula: 1234ABC</h4>
-          <p>En Plaza Virgen de Amargura</p>
-        </div>
-        <div className='icon'>
-          <img src={icon_1} alt='' className='img' />
-        </div>
-      </div>
-      <div className='info'>
-        <div className='text'>
-          <h3>Coche 2</h3>
-          <h4>Matrícula: SE5678DE</h4>
-          <p>Fuera</p>
-        </div>
-        <div className='icon'>
-          <img src={icon_2} alt='' className='img' />
-        </div>
-      </div>
-      <div className='info'>
-        <div className='text'>
-          <h3>Coche 1</h3>
-          <h4>Matrícula: 1234ABC</h4>
-          <p>En Plaza Virgen de Amargura</p>
-        </div>
-        <div className='icon'>
-          <img src={icon_1} alt='' className='img' />
-        </div>
-      </div>
-      <div className='info'>
-        <div className='text'>
-          <h3>Coche 2</h3>
-          <h4>Matrícula: SE5678DE</h4>
-          <p>Fuera</p>
-        </div>
-        <div className='icon'>
-          <img src={icon_2} alt='' className='img' />
-        </div>
-      </div>
-      <div className='info'>
-        <div className='text'>
-          <h3>Coche 1</h3>
-          <h4>Matrícula: 1234ABC</h4>
-          <p>En Plaza Virgen de Amargura</p>
-        </div>
-        <div className='icon'>
-          <img src={icon_1} alt='' className='img' />
-        </div>
-      </div>
-      <div className='info'>
-        <div className='text'>
-          <h3>Coche 2</h3>
-          <h4>Matrícula: SE5678DE</h4>
-          <p>Fuera</p>
-        </div>
-        <div className='icon'>
-          <img src={icon_2} alt='' className='img' />
-        </div>
-      </div>
+      {cars.map((car) => {
+        const {name, plate, parked, icon, alt_name} = car
+        return (
+          <div className='info'>
+            <div className='text'>
+              <h3>{name}</h3>
+              <h4>Matrícula: {plate}</h4>
+              <p>{parked}</p>
+            </div>
+            <div className='icon'>
+              <img src={icon} alt={alt_name} className='img' />
+            </div>
+          </div>
+        )
+      })}
+      
     </Wrapper>
   )
 }
