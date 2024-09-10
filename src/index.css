@@ -25,6 +25,7 @@
     --grey-950: #030712;
     /* rest of vars */
     --backgroundColor: linear-gradient(180deg, #1f2937 0%, #030712 100%);
+    --backgroundColorAlt: linear-gradient(180deg, #374151 0%, #1f2937 100%);
     --textColor: var(--grey-100);
     --radius: 0.5rem;
     --spacing: 1px;
@@ -69,11 +70,11 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
 }
 
 h3 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
 
 h4 {
@@ -89,19 +90,11 @@ h2,
 h3,
 h4,
 h5 {
-    margin: 0;
     font-family: var(--headingFont);
     letter-spacing: var(--spacing);
     text-transform: capitalize;
     line-height: 1;
-    margin-bottom: 0.75rem;
     font-weight: 500;
-}
-
-p {
-    margin-bottom: 1.25rem;
-    color: var(--grey-300);
-    max-width: 40em;
 }
 
 ul {

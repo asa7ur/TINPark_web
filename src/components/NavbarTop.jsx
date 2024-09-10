@@ -27,8 +27,4 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: space-between;
   }
-
-  h1 {
-    padding-top: 0.75rem;
-  }
 `
