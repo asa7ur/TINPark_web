@@ -39,13 +39,13 @@
     --bodyFont: 'Roboto', sans-serif;
     /* box shadow */
     --shadow-1: 0 1px 3px 0 rgb(0 0 0 / 0.1),
-    0 1px 2px -1px rgb(0 0 0 / 0.1);
+        0 1px 2px -1px rgb(0 0 0 / 0.1);
     --shadow-2: 0 4px 6px -1px rgb(0 0 0 / 0.1),
-    0 2px 4px -2px rgb(0 0 0 / 0.1);
+        0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-3: 0 10px 15px -3px rgb(0 0 0 / 0.1),
-    0 4px 6px -4px rgb(0 0 0 / 0.1);
+        0 4px 6px -4px rgb(0 0 0 / 0.1);
     --shadow-4: 0 20px 25px -5px rgb(0 0 0 / 0.1),
-    0 8px 10px -6px rgb(0 0 0 / 0.1);
+        0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
 *,
@@ -61,6 +61,10 @@ body {
     color: var(--textColor);
     line-height: 1.5;
     font-size: 0.875rem;
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(180deg, #1f2937 0%, #030712 100%);
+    background-attachment: fixed;
 }
 
 h1 {

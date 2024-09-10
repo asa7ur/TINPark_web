@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { NavbarTop, Vehicles } from '../components'
+import { NavbarTop, Vehicles, NavbarBottom } from '../components'
 
 const MisVehiculos = () => {
   return (
@@ -9,6 +9,7 @@ const MisVehiculos = () => {
         <h2>Tus Vehículos</h2>
         <Vehicles/>
       </div>
+      <NavbarBottom/>
     </Wrapper>
   )
 }
@@ -16,7 +17,8 @@ const MisVehiculos = () => {
 export default MisVehiculos
 
 const Wrapper = styled.main`
-  background: var(--backgroundColor);
+  height: 100vh;
+  overflow-y: auto;
   h2 {
     padding-top: 1rem;
   }

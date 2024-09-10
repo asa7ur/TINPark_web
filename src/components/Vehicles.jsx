@@ -12,7 +12,7 @@ const Vehicles = () => {
           <p>En Plaza Virgen de Amargura</p>
         </div>
         <div className='icon'>
-          <img src={icon_1} alt='' />
+          <img src={icon_1} alt='' className='img' />
         </div>
       </div>
       <div className='info'>
@@ -22,7 +22,7 @@ const Vehicles = () => {
           <p>Fuera</p>
         </div>
         <div className='icon'>
-          <img src={icon_2} alt='' />
+          <img src={icon_2} alt='' className='img' />
         </div>
       </div>
       <div className='info'>
@@ -32,7 +32,7 @@ const Vehicles = () => {
           <p>En Plaza Virgen de Amargura</p>
         </div>
         <div className='icon'>
-          <img src={icon_1} alt='' />
+          <img src={icon_1} alt='' className='img' />
         </div>
       </div>
       <div className='info'>
@@ -42,7 +42,7 @@ const Vehicles = () => {
           <p>Fuera</p>
         </div>
         <div className='icon'>
-          <img src={icon_2} alt='' />
+          <img src={icon_2} alt='' className='img' />
         </div>
       </div>
       <div className='info'>
@@ -52,7 +52,7 @@ const Vehicles = () => {
           <p>En Plaza Virgen de Amargura</p>
         </div>
         <div className='icon'>
-          <img src={icon_1} alt='' />
+          <img src={icon_1} alt='' className='img' />
         </div>
       </div>
       <div className='info'>
@@ -62,7 +62,7 @@ const Vehicles = () => {
           <p>Fuera</p>
         </div>
         <div className='icon'>
-          <img src={icon_2} alt='' />
+          <img src={icon_2} alt='' className='img' />
         </div>
       </div>
     </Wrapper>
@@ -95,11 +95,5 @@ const Wrapper = styled.div`
   .icon {
     width: 75px;
     height: 75px;
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 `
