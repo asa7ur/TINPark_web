@@ -11,7 +11,7 @@ const Area = () => {
             <div className='text'>
               <h3>{name}</h3>
               <h4>
-                <span className='highlighted'>
+                <span className={car ? 'highlighted' : ''}>
                   {car ? car : 'Ningún vehículo'}
                 </span>{' '}
                 está aparcado aquí
