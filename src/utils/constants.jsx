@@ -33,6 +33,7 @@ export const links = [
 
 export const cars = [
   {
+    id: 1,
     name: 'Coche 1',
     plate: '1234ABC',
     parked: 'Plaza Virgen de la Amargura',
@@ -40,6 +41,7 @@ export const cars = [
     alt_name: 'Mercedes Benz',
   },
   {
+    id: 2,
     name: 'Coche 2',
     plate: '5678DEF',
     parked: '',
@@ -47,6 +49,7 @@ export const cars = [
     alt_name: 'BMW',
   },
   {
+    id: 3,
     name: 'Coche 3',
     plate: '9123GHI',
     parked: 'Plaza de Armas',
@@ -54,6 +57,7 @@ export const cars = [
     alt_name: 'Peugeot',
   },
   {
+    id: 4,
     name: 'Coche 4',
     plate: '4567JKL',
     parked: 'Viapol',

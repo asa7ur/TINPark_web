@@ -1,16 +1,23 @@
 import styled from 'styled-components'
 import { cars } from '../utils/constants'
+import { useNavigate } from 'react-router-dom'
 
 const Vehicle = () => {
+  const navigate = useNavigate()
+
+  const handleClick = (id) => {
+    navigate(`/misvehiculos/${id}`)
+  }
+
   return (
     <Wrapper>
       {cars.map((car) => {
-        const { name, plate, parked, icon, alt_name } = car
+        const { id, name, plate, parked, icon, alt_name } = car
         return (
-          <div className='info'>
+          <div key={id} className='info' onClick={()=> handleClick(id)}>
             <div className='text'>
-              <h3>{name}</h3>
-              <h4>Matrícula: {plate}</h4>
+              <h4>{name}</h4>
+              <h5>Matrícula: {plate}</h5>
               <p>
                 {parked ? 'En ' : 'Fuera'}
                 {parked && <span className='highlighted'>{parked}</span>}
@@ -38,13 +45,14 @@ const Wrapper = styled.div`
     border: var(--border);
     background: var(--backgroundColorAlt);
     box-shadow: var(--shadow-4);
-  }
-
-  h3 {
-    margin-bottom: 0.5rem;
+    cursor: pointer;
   }
 
   h4 {
+    margin-bottom: 0.5rem;
+  }
+
+  h5 {
     margin-bottom: 0.25rem;
     font-weight: 400;
   }

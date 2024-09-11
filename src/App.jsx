@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { MisVehiculos, Areas } from './pages'
+import { MisVehiculos, Areas, Vehiculo } from './pages'
 
 const App = () => {
   return (
@@ -7,6 +7,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<MisVehiculos />} />
         <Route path='/areas' element={<Areas />} />
+        <Route path='/misvehiculos/:id' element={<Vehiculo />} />
       </Routes>
     </Router>
   )

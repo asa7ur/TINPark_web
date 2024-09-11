@@ -9,13 +9,13 @@ const Area = () => {
         return (
           <div className='info' key={name}>
             <div className='text'>
-              <h3>{name}</h3>
-              <h4>
+              <h4>{name}</h4>
+              <h5>
                 <span className={car ? 'highlighted' : ''}>
                   {car ? car : 'Ningún vehículo'}
                 </span>{' '}
                 está aparcado aquí
-              </h4>
+              </h5>
               <p>
                 Hay <span className='highlighted'>{free_space}</span> sitios
                 libres
@@ -53,7 +53,7 @@ const Wrapper = styled.div`
     box-shadow: var(--shadow-4);
   }
 
-  h3 {
+  h4 {
     margin-bottom: 0.5rem;
     white-space: nowrap;
     overflow: hidden;
@@ -61,7 +61,7 @@ const Wrapper = styled.div`
     max-width: 100%;
   }
 
-  h4 {
+  h5 {
     margin-bottom: 0.25rem;
     font-weight: 400;
     white-space: nowrap;
