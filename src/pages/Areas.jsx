@@ -12,7 +12,6 @@ const Areas = () => {
 
     window.addEventListener('resize', handleResize)
 
-    // Clean up the event listener on unmount
     return () => {
       window.removeEventListener('resize', handleResize)
     }
