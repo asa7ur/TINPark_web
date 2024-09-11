@@ -132,6 +132,11 @@ button {
     margin: 0 auto;
     max-width: var(--max-width);
     flex-grow: 1;
+    padding-bottom: 2rem;
+}
+
+.highlighted {
+    color: #12a1f6;
 }
 
 .text-center {

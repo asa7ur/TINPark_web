@@ -47,6 +47,13 @@ const Wrapper = styled.div`
     font-weight: 400;
   }
 
+  p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
   .icon {
     width: 75px;
     height: 75px;

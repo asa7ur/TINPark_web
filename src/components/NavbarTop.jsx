@@ -33,6 +33,7 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-bottom: 0;
   }
 
   .icon {
