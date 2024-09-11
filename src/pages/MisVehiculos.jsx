@@ -23,7 +23,7 @@ const MisVehiculos = () => {
       <NavbarTop />
       <div className='section-center'>
         <h2>Tus Vehículos</h2>
-        <Vehicles />
+        <Vehicle />
       </div>
       <NavbarBottom />
     </Wrapper>
