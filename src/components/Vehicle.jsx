@@ -1,17 +1,20 @@
 import styled from 'styled-components'
-import {cars} from '../utils/constants'
+import { cars } from '../utils/constants'
 
 const Vehicle = () => {
   return (
     <Wrapper>
       {cars.map((car) => {
-        const {name, plate, parked, icon, alt_name} = car
+        const { name, plate, parked, icon, alt_name } = car
         return (
           <div className='info'>
             <div className='text'>
               <h3>{name}</h3>
               <h4>Matrícula: {plate}</h4>
-              <p>{parked}</p>
+              <p>
+                {parked ? 'En ' : 'Fuera'}
+                {parked && <span className='highlighted'>{parked}</span>}
+              </p>
             </div>
             <div className='icon'>
               <img src={icon} alt={alt_name} className='img' />
@@ -19,7 +22,6 @@ const Vehicle = () => {
           </div>
         )
       })}
-      
     </Wrapper>
   )
 }
