@@ -1,8 +1,17 @@
 import styled from 'styled-components'
+import { useLocation, useNavigate } from 'react-router-dom'
 
-const Button = ({ icon: Icon }) => {
+const Button = ({ icon: Icon, url }) => {
+  const location = useLocation()
+  const navigate = useNavigate()
+  const isActive = location.pathname === url
+
+  const handleClick = () => {
+    navigate(url)
+  }
+
   return (
-    <Wrapper>
+    <Wrapper onClick={handleClick} className={isActive ? 'highlighted' : ''}>
       <div className='styled-circle'>
         <Icon className='icon' />
       </div>
@@ -13,6 +22,8 @@ const Button = ({ icon: Icon }) => {
 export default Button
 
 const Wrapper = styled.div`
+  cursor: pointer;
+
   .icon {
     font-size: 1.25rem;
   }
@@ -28,6 +39,7 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   .styled-circle::after {
@@ -47,4 +59,5 @@ const Wrapper = styled.div`
     mix-blend-mode: overlay;
     pointer-events: none;
   }
+
 `

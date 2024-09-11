@@ -8,7 +8,7 @@ const NavbarBottom = () => {
     <Wrapper>
       <div className='navbar'>
         {navbarLinks.map((link) => (
-          <Button key={link.id} icon={link.icon} />
+          <Button key={link.id} icon={link.icon} url={link.url} />
         ))}
       </div>
     </Wrapper>

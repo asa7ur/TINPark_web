@@ -10,7 +10,7 @@ const NavbarTop = () => {
       <div className='section'>
         <div className='section-center'>
           <h1>Hola, Garik!</h1>
-          {userLink && <Button icon={userLink.icon} />}
+          {userLink && <Button icon={userLink.icon} url={userLink.url} />}
         </div>
       </div>
     </Wrapper>
