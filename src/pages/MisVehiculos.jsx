@@ -34,7 +34,10 @@ export default MisVehiculos
 
 const Wrapper = styled.main`
   height: 100vh;
+  display: flex;
+  flex-direction: column;
   overflow-y: auto;
+
   h2 {
     padding-top: 1rem;
   }
