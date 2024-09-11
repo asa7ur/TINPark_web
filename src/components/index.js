@@ -1,6 +1,6 @@
 import NavbarTop from "./NavbarTop";
 import NavbarBottom from "./NavbarBottom";
 import Button from "./Button";
-import Vehicles from "./Vehicles";
+import Vehicle from "./Vehicle";
 
-export {NavbarBottom, NavbarTop, Button, Vehicles}
+export {NavbarBottom, NavbarTop, Button, Vehicle}

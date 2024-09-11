@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { NavbarTop, Vehicles, NavbarBottom } from '../components'
+import { NavbarTop, Vehicle, NavbarBottom } from '../components'
 
 const MisVehiculos = () => {
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight)

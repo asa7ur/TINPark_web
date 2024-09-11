@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import {cars} from '../utils/constants'
 
-const Vehicles = () => {
+const Vehicle = () => {
   return (
     <Wrapper>
       {cars.map((car) => {
@@ -23,7 +23,7 @@ const Vehicles = () => {
     </Wrapper>
   )
 }
-export default Vehicles
+export default Vehicle
 
 const Wrapper = styled.div`
   .info {
