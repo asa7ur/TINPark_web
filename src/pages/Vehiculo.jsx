@@ -2,9 +2,8 @@ import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { NavbarBottom, CarState } from '../components'
-import { vehicles } from '../utils/constants'
+import { vehicles, inside, outside } from '../utils/constants'
 import { FaLongArrowAltLeft } from 'react-icons/fa'
-import { RxGear, RxExit } from 'react-icons/rx'
 
 const Vehiculo = () => {
   const { id } = useParams()
@@ -38,7 +37,9 @@ const Vehiculo = () => {
   }, [])
 
   useEffect(() => {
-    const selectedVehicle = vehicles.find((vehicle) => vehicle.id === parseInt(id))
+    const selectedVehicle = vehicles.find(
+      (vehicle) => vehicle.id === parseInt(id)
+    )
     setVehicle(selectedVehicle)
   }, [id])
 
@@ -48,10 +49,13 @@ const Vehiculo = () => {
 
   const { name, plate, parked, icon, alt_name } = vehicle
 
+  // Determine which options to show based on whether the car is parked or not
+  const options = parked ? inside : outside
+
   return (
     <Wrapper style={{ height: `${viewportHeight}px` }}>
       <div className='section-center'>
-        <div className='return' onClick={() => handleClick()}>
+        <div className='return' onClick={handleClick}>
           <FaLongArrowAltLeft />
           <p>Volver</p>
         </div>
@@ -65,24 +69,27 @@ const Vehiculo = () => {
         </div>
       </div>
       <div className='options'>
-        <button className='option' onClick={handleShowCarState}>
-          <RxGear className='icon' />
-          <h5>Corregir el estado</h5>
-        </button>
-        <button className='option'>
-          <RxExit className='icon' />
-          <h5>Salir por Principal</h5>
-        </button>
-        <button className='option'>
-          <RxExit className='icon' />
-          <h5>Salir por Callejón</h5>
-        </button>
+        {options.map((option) => (
+          <button
+            key={option.id}
+            className='option'
+            onClick={
+              option.text === 'Corregir el estado'
+                ? handleShowCarState
+                : undefined
+            }
+          >
+            <option.icon className='icon' />
+            <h5>{option.text}</h5>
+          </button>
+        ))}
       </div>
       {showCarState && <CarState onClose={handleHideCarState} />}
       <NavbarBottom />
     </Wrapper>
   )
 }
+
 export default Vehiculo
 
 const Wrapper = styled.main`
