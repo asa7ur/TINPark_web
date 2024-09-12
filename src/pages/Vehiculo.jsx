@@ -1,57 +1,61 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import styled from 'styled-components'
-import { NavbarBottom, CarState } from '../components'
-import { cars } from '../utils/constants'
+import { useFilterContext } from '../context'
 import { FaLongArrowAltLeft } from 'react-icons/fa'
-import { RxGear, RxExit } from 'react-icons/rx'
+import styled from 'styled-components'
+import { inside, outside, vehicles } from './constants'
+import CarState from './CarState'
 
 const Vehiculo = () => {
   const { id } = useParams()
   const navigate = useNavigate()
-  const [viewportHeight, setViewportHeight] = useState(window.innerHeight)
-  const [vehicle, setVehicle] = useState(null)
-  const [showCarState, setShowCarState] = useState(false)
-
-  const handleClick = () => {
-    navigate('/')
-  }
-
-  const handleShowCarState = () => {
-    setShowCarState(true)
-  }
-
-  const handleHideCarState = () => {
-    setShowCarState(false)
-  }
+  const {
+    vehicle,
+    setVehicle,
+    showCarState,
+    hideCarState,
+    viewportHeight,
+    showCarState: showState,
+  } = useFilterContext()
 
   useEffect(() => {
-    const handleResize = () => {
-      setViewportHeight(window.innerHeight)
-    }
-
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
-
-  useEffect(() => {
-    const selectedVehicle = cars.find((car) => car.id === parseInt(id))
-    setVehicle(selectedVehicle)
-  }, [id])
+    const vehicleData = vehicles.find((v) => v.id === parseInt(id))
+    setVehicle(vehicleData)
+  }, [id, setVehicle])
 
   if (!vehicle) {
     return <div>Loading...</div>
   }
 
   const { name, plate, parked, icon, alt_name } = vehicle
+  const options = parked ? inside : outside
+
+  const handleAction = (action) => {
+    switch (action) {
+      case 'showCarState':
+        showState()
+        break
+      case 'exitMain':
+        // Logic for exiting through the main gate
+        break
+      case 'exitAlley':
+        // Logic for exiting through the alley
+        break
+      case 'enterMain':
+        // Logic for entering through the main gate
+        break
+      case 'authorizePlate':
+        // Logic for authorizing another plate
+        break
+      default:
+        break
+    }
+  }
 
   return (
     <Wrapper style={{ height: `${viewportHeight}px` }}>
       <div className='section-center'>
-        <div className='return' onClick={() => handleClick()}>
+        <div className='return' onClick={() => navigate('/')}>
           <FaLongArrowAltLeft />
           <p>Volver</p>
         </div>
@@ -65,24 +69,23 @@ const Vehiculo = () => {
         </div>
       </div>
       <div className='options'>
-        <button className='option' onClick={handleShowCarState}>
-          <RxGear className='icon' />
-          <h5>Corregir el estado</h5>
-        </button>
-        <button className='option'>
-          <RxExit className='icon' />
-          <h5>Salir por Principal</h5>
-        </button>
-        <button className='option'>
-          <RxExit className='icon' />
-          <h5>Salir por Callejón</h5>
-        </button>
+        {options.map(({ id, icon: IconComponent, text, action }) => (
+          <button
+            key={id}
+            className='option'
+            onClick={() => handleAction(action)}
+          >
+            <IconComponent className='icon' />
+            <h5>{text}</h5>
+          </button>
+        ))}
       </div>
-      {showCarState && <CarState onClose={handleHideCarState} />}
+      {showCarState && <CarState onClose={hideCarState} />}{' '}
       <NavbarBottom />
     </Wrapper>
   )
 }
+
 export default Vehiculo
 
 const Wrapper = styled.main`

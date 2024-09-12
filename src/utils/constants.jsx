@@ -1,4 +1,6 @@
 import { FaUserCircle, FaCar, FaRegMap, FaBars } from 'react-icons/fa'
+import { RxGear, RxExit, RxEnter } from 'react-icons/rx'
+import { IoMdKey } from 'react-icons/io'
 import icon_1 from '../assets/MercedesBenz.png'
 import icon_2 from '../assets/BMW.png'
 import icon_3 from '../assets/Peugeot.png'
@@ -31,7 +33,7 @@ export const links = [
   },
 ]
 
-export const cars = [
+export const vehicles = [
   {
     id: 1,
     name: 'Coche 1',
@@ -87,5 +89,49 @@ export const zones = [
     car: 'Coche 3',
     free_space: 12,
     map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.601678677822!2d-5.977500602918619!3d37.37560086097401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126f4946f42a5f%3A0xdf78d8e2f789d429!2sParking%20Viapol%20Center%20Sevilla!5e0!3m2!1sen!2ses!4v1726047861489!5m2!1sen!2ses',
+  },
+]
+
+// Options to show when the vehicle is inside
+export const inside = [
+  {
+    id: 1,
+    icon: RxGear,
+    text: 'Corregir el estado',
+    action: 'showCarState',
+  },
+  {
+    id: 2,
+    icon: RxExit,
+    text: 'Salir por Principal',
+    action: 'exitMain',
+  },
+  {
+    id: 3,
+    icon: RxExit,
+    text: 'Salir por Callejón',
+    action: 'exitAlley',
+  },
+]
+
+// Options to show when the vehicle is outside
+export const outside = [
+  {
+    id: 1,
+    icon: RxGear,
+    text: 'Corregir el estado',
+    action: 'showCarState',
+  },
+  {
+    id: 2,
+    icon: RxEnter,
+    text: 'Entrar por Principal',
+    action: 'enterMain',
+  },
+  {
+    id: 3,
+    icon: IoMdKey,
+    text: 'Autorizar otra matrícula',
+    action: 'authorizePlate',
   },
 ]
