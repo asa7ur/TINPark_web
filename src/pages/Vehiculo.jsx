@@ -1,20 +1,28 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import { NavbarBottom } from '../components'
+import { NavbarBottom, CarState } from '../components'
 import { cars } from '../utils/constants'
 import { FaLongArrowAltLeft } from 'react-icons/fa'
-import { RxGear } from 'react-icons/rx'
-import { RxExit } from 'react-icons/rx'
+import { RxGear, RxExit } from 'react-icons/rx'
 
 const Vehiculo = () => {
   const { id } = useParams()
   const navigate = useNavigate()
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight)
   const [vehicle, setVehicle] = useState(null)
+  const [showCarState, setShowCarState] = useState(false)
 
   const handleClick = () => {
     navigate('/')
+  }
+
+  const handleShowCarState = () => {
+    setShowCarState(true)
+  }
+
+  const handleHideCarState = () => {
+    setShowCarState(false)
   }
 
   useEffect(() => {
@@ -57,19 +65,20 @@ const Vehiculo = () => {
         </div>
       </div>
       <div className='options'>
-        <div className='option'>
+        <button className='option' onClick={handleShowCarState}>
           <RxGear className='icon' />
           <h5>Corregir el estado</h5>
-        </div>
-        <div className='option'>
+        </button>
+        <button className='option'>
           <RxExit className='icon' />
           <h5>Salir por Principal</h5>
-        </div>
-        <div className='option'>
+        </button>
+        <button className='option'>
           <RxExit className='icon' />
           <h5>Salir por Callejón</h5>
-        </div>
+        </button>
       </div>
+      {showCarState && <CarState onClose={handleHideCarState} />}
       <NavbarBottom />
     </Wrapper>
   )
@@ -86,6 +95,7 @@ const Wrapper = styled.main`
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  position: relative;
 
   .return {
     cursor: pointer;

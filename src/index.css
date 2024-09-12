@@ -115,6 +115,9 @@ hr {
 
 button {
     font-family: inherit;
+    color: var(--textColor);
+    background: var(--backgroundColorAlt);
+    border: var(--border);
 }
 
 .img {

@@ -3,5 +3,6 @@ import NavbarBottom from "./NavbarBottom";
 import Button from "./Button";
 import Vehicle from "./Vehicle";
 import Area from "./Area";
+import CarState from "./CarState";
 
-export {NavbarBottom, NavbarTop, Button, Vehicle, Area}
+export {NavbarBottom, NavbarTop, Button, Vehicle, Area, CarState}
