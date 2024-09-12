@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { NavbarTop, Area, NavbarBottom } from '../components'
+import { NavbarTop, Zone, NavbarBottom } from '../components'
 
-const Areas = () => {
+const Zonas = () => {
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight)
 
   useEffect(() => {
@@ -22,14 +22,14 @@ const Areas = () => {
       <NavbarTop />
       <div className='section-center'>
         <h2>Áreas disponibles</h2>
-        <Area />
+        <Zone />
       </div>
       <NavbarBottom />
     </Wrapper>
   )
 }
 
-export default Areas
+export default Zonas
 
 const Wrapper = styled.main`
   height: 100vh;

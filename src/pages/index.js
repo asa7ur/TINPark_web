@@ -1,6 +1,6 @@
 import MisVehiculos from "./MisVehiculos";
-import Areas from "./Areas";
+import Zonas from "./Zonas";
 import Vehiculo from "./Vehiculo";
 import Usuario from "./Usuario";
 
-export {MisVehiculos, Areas, Vehiculo, Usuario}
+export {MisVehiculos, Zonas, Vehiculo, Usuario}

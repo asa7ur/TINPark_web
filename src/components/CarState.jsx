@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { useState, useEffect, useRef } from 'react'
-import { areas } from '../utils/constants'
+import { zones } from '../utils/constants'
 
 const CarState = ({ onClose }) => {
   const [selectedArea, setSelectedArea] = useState('')
@@ -28,8 +28,8 @@ const CarState = ({ onClose }) => {
     <Wrapper>
       <div className='content' ref={modalRef}>
         <h4>Corregir el Estado</h4>
-        <ul className='areas'>
-          <li className='area'>
+        <ul className='zones'>
+          <li className='zone'>
             <label>
               <input
                 type='radio'
@@ -40,10 +40,10 @@ const CarState = ({ onClose }) => {
               Fuera
             </label>
           </li>
-          {areas.map((area) => {
-            const { id, name } = area
+          {zones.map((zone) => {
+            const { id, name } = zone
             return (
-              <li key={id} className='area'>
+              <li key={id} className='zone'>
                 <label>
                   <input
                     type='radio'
