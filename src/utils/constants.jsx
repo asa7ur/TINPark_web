@@ -31,7 +31,7 @@ export const links = [
   },
 ]
 
-export const cars = [
+export const vehicles = [
   {
     id: 1,
     name: 'Coche 1',

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { NavbarBottom, CarState } from '../components'
-import { cars } from '../utils/constants'
+import { vehicles } from '../utils/constants'
 import { FaLongArrowAltLeft } from 'react-icons/fa'
 import { RxGear, RxExit } from 'react-icons/rx'
 
@@ -38,7 +38,7 @@ const Vehiculo = () => {
   }, [])
 
   useEffect(() => {
-    const selectedVehicle = cars.find((car) => car.id === parseInt(id))
+    const selectedVehicle = vehicles.find((vehicle) => vehicle.id === parseInt(id))
     setVehicle(selectedVehicle)
   }, [id])
 
