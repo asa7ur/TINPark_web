@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { vehicles } from '../utils/constants'
+import { cars } from '../utils/constants'
 import { useNavigate } from 'react-router-dom'
 
 const Vehicle = () => {
@@ -11,8 +11,8 @@ const Vehicle = () => {
 
   return (
     <Wrapper>
-      {vehicles.map((vehicle) => {
-        const { id, name, plate, parked, icon, alt_name } = vehicle
+      {cars.map((car) => {
+        const { id, name, plate, parked, icon, alt_name } = car
         return (
           <div key={id} className='info' onClick={()=> handleClick(id)}>
             <div className='text'>
