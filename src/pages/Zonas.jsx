@@ -21,7 +21,7 @@ const Zonas = () => {
     <Wrapper style={{ height: `${viewportHeight}px` }}>
       <NavbarTop />
       <div className='section-center'>
-        <h2>Áreas disponibles</h2>
+        <h2>Zonas disponibles</h2>
         <Zone />
       </div>
       <NavbarBottom />
