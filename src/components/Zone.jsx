@@ -1,11 +1,11 @@
 import styled from 'styled-components'
-import { areas } from '../utils/constants'
+import { zones } from '../utils/constants'
 
-const Area = () => {
+const Zone = () => {
   return (
     <Wrapper>
-      {areas.map((area) => {
-        const { name, car, free_space, map } = area
+      {zones.map((zone) => {
+        const { name, car, free_space, map } = zone
         return (
           <div className='info' key={name}>
             <div className='text'>
@@ -39,7 +39,7 @@ const Area = () => {
   )
 }
 
-export default Area
+export default Zone
 
 const Wrapper = styled.div`
   .info {
