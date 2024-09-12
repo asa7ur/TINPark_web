@@ -7,9 +7,18 @@ const NavbarBottom = () => {
   return (
     <Wrapper>
       <div className='navbar'>
-        {navbarLinks.map((link) => (
-          <Button key={link.id} icon={link.icon} url={link.url} />
-        ))}
+        {navbarLinks.map((link) => {
+          const { id, icon, url, label } = link
+          return (
+            <Button
+              key={id}
+              icon={icon}
+              url={url}
+              showLabel={true}
+              label={label}
+            />
+          )
+        })}
       </div>
     </Wrapper>
   )

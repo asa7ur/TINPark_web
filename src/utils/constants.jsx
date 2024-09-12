@@ -8,25 +8,25 @@ export const links = [
   {
     id: 1,
     icon: FaUserCircle,
-    text: 'usuario',
+    label: 'Usuario',
     url: '/usuario',
   },
   {
     id: 2,
     icon: FaCar,
-    text: 'mis vehiculos',
+    label: 'Vehículos',
     url: '/',
   },
   {
     id: 3,
     icon: FaRegMap,
-    text: 'areas',
+    label: 'Zonas',
     url: '/areas',
   },
   {
     id: 4,
     icon: FaBars,
-    text: 'ajustes',
+    label: 'Ajustes',
     url: '/ajustes',
   },
 ]
