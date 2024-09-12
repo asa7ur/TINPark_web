@@ -21,7 +21,7 @@ export const links = [
     id: 3,
     icon: FaRegMap,
     label: 'Zonas',
-    url: '/areas',
+    url: '/zonas',
   },
   {
     id: 4,
@@ -66,7 +66,7 @@ export const cars = [
   },
 ]
 
-export const areas = [
+export const zones = [
   {
     id: 1,
     name: 'Plaza Virgen de Amargura',
