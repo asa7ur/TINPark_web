@@ -1,21 +1,9 @@
-import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { NavbarTop, Zone, NavbarBottom } from '../components'
+import { useAllContext } from '../context'
 
 const Zonas = () => {
-  const [viewportHeight, setViewportHeight] = useState(window.innerHeight)
-
-  useEffect(() => {
-    const handleResize = () => {
-      setViewportHeight(window.innerHeight)
-    }
-
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
+  const { viewportHeight } = useAllContext()
 
   return (
     <Wrapper style={{ height: `${viewportHeight}px` }}>

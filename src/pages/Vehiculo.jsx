@@ -1,6 +1,6 @@
+import styled from 'styled-components'
 import { useEffect, useCallback } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import styled from 'styled-components'
 import { NavbarBottom, CarState } from '../components'
 import { vehicles, inside, outside } from '../utils/constants'
 import { FaLongArrowAltLeft } from 'react-icons/fa'
