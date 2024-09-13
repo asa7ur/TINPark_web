@@ -1,0 +1,4 @@
+export const SELECT_ZONE = 'SELECT_ZONE'
+export const TOGGLE_MODAL = 'TOGGLE_MODAL'
+export const SET_VEHICLE = 'SET_VEHICLE'
+export const SET_VIEWPORT_HEIGHT = 'SET_VIEWPORT_HEIGHT'

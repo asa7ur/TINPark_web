@@ -1,55 +1,33 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useCallback } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 import { NavbarBottom, CarState } from '../components'
 import { vehicles, inside, outside } from '../utils/constants'
 import { FaLongArrowAltLeft } from 'react-icons/fa'
+import { useAllContext } from '../context'
 
 const Vehiculo = () => {
   const { id } = useParams()
   const navigate = useNavigate()
-  const [viewportHeight, setViewportHeight] = useState(window.innerHeight)
-  const [vehicle, setVehicle] = useState(null)
-  const [showCarState, setShowCarState] = useState(false)
+  const { viewportHeight, vehicle, modalType, toggleModal, setVehicle } =
+    useAllContext()
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     navigate('/')
-  }
-
-  const handleShowCarState = () => {
-    setShowCarState(true)
-  }
-
-  const handleHideCarState = () => {
-    setShowCarState(false)
-  }
-
-  useEffect(() => {
-    const handleResize = () => {
-      setViewportHeight(window.innerHeight)
-    }
-
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
+  }, [navigate])
 
   useEffect(() => {
     const selectedVehicle = vehicles.find(
-      (vehicle) => vehicle.id === parseInt(id)
+      (vehicle) => vehicle.id === parseInt(id, 10)
     )
     setVehicle(selectedVehicle)
-  }, [id])
+  }, [id, setVehicle])
 
   if (!vehicle) {
     return <div>Loading...</div>
   }
 
   const { name, plate, parked, icon, alt_name } = vehicle
-
-  // Determine which options to show based on whether the car is parked or not
   const options = parked ? inside : outside
 
   return (
@@ -75,7 +53,7 @@ const Vehiculo = () => {
             className='option'
             onClick={
               option.text === 'Corregir el estado'
-                ? handleShowCarState
+                ? () => toggleModal('carState')
                 : undefined
             }
           >
@@ -84,7 +62,9 @@ const Vehiculo = () => {
           </button>
         ))}
       </div>
-      {showCarState && <CarState onClose={handleHideCarState} />}
+      {modalType === 'carState' && (
+        <CarState onClose={() => toggleModal(null)} />
+      )}
       <NavbarBottom />
     </Wrapper>
   )
@@ -166,9 +146,11 @@ const Wrapper = styled.main`
     border-radius: 5px;
     border: var(--border);
     cursor: pointer;
+
     .icon {
       font-size: 1.2rem;
     }
+
     h5 {
       text-transform: none;
     }
