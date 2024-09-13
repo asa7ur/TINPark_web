@@ -2,7 +2,7 @@ import React, { useReducer, useContext, useEffect, useCallback } from 'react'
 import allReducer from './reducer'
 import {
   SELECT_ZONE,
-  TOGGLE_MODAL,
+  CHANGE_STATE,
   SET_VEHICLE,
   SET_VIEWPORT_HEIGHT,
 } from './actions'
@@ -24,8 +24,8 @@ export const AllProvider = ({ children }) => {
     dispatch({ type: SELECT_ZONE, payload: zone })
   }
 
-  const toggleModal = (modalType = null) => {
-    dispatch({ type: TOGGLE_MODAL, payload: modalType })
+  const changeState = (modalType = null) => {
+    dispatch({ type: CHANGE_STATE, payload: modalType })
   }
 
   const handleResize = useCallback(() => {
@@ -48,7 +48,7 @@ export const AllProvider = ({ children }) => {
       value={{
         ...state,
         selectZone,
-        toggleModal,
+        changeState,
         setViewportHeight: (height) =>
           dispatch({ type: SET_VIEWPORT_HEIGHT, payload: height }),
         setVehicle,

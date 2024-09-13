@@ -1,6 +1,6 @@
 import {
   SELECT_ZONE,
-  TOGGLE_MODAL,
+  CHANGE_STATE,
   SET_VEHICLE,
   SET_VIEWPORT_HEIGHT,
 } from './actions'
@@ -14,7 +14,7 @@ const allReducer = (state, action) => {
         isModalOpen: false,
         modalType: null,
       }
-    case TOGGLE_MODAL:
+    case CHANGE_STATE:
       return {
         ...state,
         isModalOpen: !state.isModalOpen,

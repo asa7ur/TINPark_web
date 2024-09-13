@@ -9,7 +9,7 @@ import { useAllContext } from '../context'
 const Vehiculo = () => {
   const { id } = useParams()
   const navigate = useNavigate()
-  const { viewportHeight, vehicle, modalType, toggleModal, setVehicle } =
+  const { viewportHeight, vehicle, modalType, changeState, setVehicle } =
     useAllContext()
 
   const handleClick = useCallback(() => {
@@ -20,8 +20,10 @@ const Vehiculo = () => {
     const selectedVehicle = vehicles.find(
       (vehicle) => vehicle.id === parseInt(id, 10)
     )
-    setVehicle(selectedVehicle)
-  }, [id, setVehicle])
+    if (selectedVehicle !== vehicle) {
+      setVehicle(selectedVehicle)
+    }
+  }, [id, vehicle, setVehicle])
 
   if (!vehicle) {
     return <div>Loading...</div>
@@ -53,7 +55,7 @@ const Vehiculo = () => {
             className='option'
             onClick={
               option.text === 'Corregir el estado'
-                ? () => toggleModal('carState')
+                ? () => changeState('carState')
                 : undefined
             }
           >
@@ -63,7 +65,7 @@ const Vehiculo = () => {
         ))}
       </div>
       {modalType === 'carState' && (
-        <CarState onClose={() => toggleModal(null)} />
+        <CarState onClose={() => changeState(null)} />
       )}
       <NavbarBottom />
     </Wrapper>
