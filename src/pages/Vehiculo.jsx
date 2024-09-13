@@ -1,16 +1,22 @@
-import styled from 'styled-components'
 import { useEffect, useCallback } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { NavbarBottom, CarState } from '../components'
 import { vehicles, inside, outside } from '../utils/constants'
 import { FaLongArrowAltLeft } from 'react-icons/fa'
 import { useAllContext } from '../context'
+import styled from 'styled-components'
 
 const Vehiculo = () => {
   const { id } = useParams()
   const navigate = useNavigate()
-  const { viewportHeight, vehicle, modalType, changeState, setVehicle } =
-    useAllContext()
+  const {
+    viewportHeight,
+    vehicle,
+    modalType,
+    changeState,
+    setVehicle,
+    selectZone,
+  } = useAllContext()
 
   const handleClick = useCallback(() => {
     navigate('/')
@@ -22,8 +28,9 @@ const Vehiculo = () => {
     )
     if (selectedVehicle !== vehicle) {
       setVehicle(selectedVehicle)
+      selectZone(selectedVehicle.parked || 'Fuera')
     }
-  }, [id, vehicle, setVehicle])
+  }, [id, vehicle, setVehicle, selectZone])
 
   if (!vehicle) {
     return <div>Loading...</div>

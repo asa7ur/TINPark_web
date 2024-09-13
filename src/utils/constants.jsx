@@ -71,7 +71,7 @@ export const vehicles = [
 export const zones = [
   {
     id: 1,
-    name: 'Plaza Virgen de Amargura',
+    name: 'Plaza Virgen de la Amargura',
     car: 'Coche 1',
     free_space: 0,
     map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3170.0734916935326!2d-6.012024824622136!3d37.388094234340954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126c6dda1d2473%3A0x5e656ecba7a27575!2sPl.%20Virgen%20de%20la%20Amargura%2C%2041010%20Sevilla!5e0!3m2!1sen!2ses!4v1726048285970!5m2!1sen!2ses',
