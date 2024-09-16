@@ -17,7 +17,7 @@ export const links = [
     id: 2,
     icon: FaCar,
     label: 'Vehículos',
-    url: '/',
+    url: '/misvehiculos',
   },
   {
     id: 3,
