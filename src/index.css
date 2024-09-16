@@ -152,10 +152,7 @@ button {
     padding-bottom: 2rem;
 }
 
-.highlighted {
-    color: var(--primary-400);
-}
-
-.active{
+.highlighted,
+.active {
     color: var(--primary-400);
 }
