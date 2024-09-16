@@ -5,7 +5,7 @@ import logo from '../assets/Logo.png'
 const Principal = () => {
   return (
     <Wrapper>
-      <img src={logo}/>
+      <img src={logo} className='img' />
       <div className='section-center'>
         <div className='info'>
           <h1>TINPark</h1>
