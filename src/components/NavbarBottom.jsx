@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { links } from '../utils/constants'
 import Button from './Button'
+import { Link } from 'react-router-dom'
 
 const NavbarBottom = () => {
   const navbarLinks = links.filter((link) => link.id > 1)
@@ -10,13 +11,14 @@ const NavbarBottom = () => {
         {navbarLinks.map((link) => {
           const { id, icon, url, label } = link
           return (
-            <Button
-              key={id}
-              icon={icon}
-              url={url}
-              showLabel={true}
-              label={label}
-            />
+            <Link to={url} className='nav-button' key={id}>
+              <Button
+                url={url}
+                icon={icon}
+                showLabel={true}
+                label={label}
+              />
+            </Link>
           )
         })}
       </div>

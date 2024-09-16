@@ -1,6 +1,4 @@
-import MisVehiculos from "./MisVehiculos";
-import Zonas from "./Zonas";
-import Vehiculo from "./Vehiculo";
-import Usuario from "./Usuario";
-
-export {MisVehiculos, Zonas, Vehiculo, Usuario}
+export { default as MisVehiculos } from './MisVehiculos'
+export { default as Zonas } from './Zonas'
+export { default as Vehiculo } from './Vehiculo'
+export { default as Usuario } from './Usuario'

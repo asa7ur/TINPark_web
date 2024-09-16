@@ -1,18 +1,12 @@
 import styled from 'styled-components'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 const Button = ({ icon: Icon, url, isUserButton, showLabel, label }) => {
   const location = useLocation()
-  const navigate = useNavigate()
   const isActive = location.pathname === url
-
-  const handleClick = () => {
-    navigate(url)
-  }
 
   return (
     <Wrapper
-      onClick={handleClick}
       className={`${isActive ? 'highlighted' : ''} ${
         isUserButton ? 'user-btn' : ''
       }`}

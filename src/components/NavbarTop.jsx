@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { links } from '../utils/constants'
+import { Link } from 'react-router-dom'
 import Button from './Button'
 
 const NavbarTop = () => {
@@ -11,13 +12,15 @@ const NavbarTop = () => {
         <div className='section-center'>
           <h1>Hola, Garik!</h1>
           {userLink && (
-            <Button
-              className='btn'
-              icon={userLink.icon}
-              url={userLink.url}
-              isUserButton={true}
-              showLabel={false}
-            />
+            <Link to={userLink.url}>
+              <Button
+                className='btn'
+                icon={userLink.icon}
+                url={userLink.url}
+                isUserButton={true}
+                showLabel={false}
+              />
+            </Link>
           )}
         </div>
       </div>
