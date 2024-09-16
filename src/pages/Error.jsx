@@ -11,7 +11,7 @@ const Error = () => {
   return (
     <Wrapper style={{ height: `${viewportHeight}px` }}>
       <div className='section-center'>
-        <h1>Página no encontrada</h1>
+        <h2>Página no encontrada</h2>
         <Link to='/'>
           <button>Volver</button>
         </Link>
@@ -27,8 +27,21 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-
-  h2 {
-    padding-top: 3rem;
+  
+  .section-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
+  
+   h2{
+    margin-bottom: 1rem;
+   }
+
+   button{
+    font-size: 1.5rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 5px;
+   }
 `
