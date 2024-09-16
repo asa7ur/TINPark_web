@@ -1,16 +1,9 @@
 import styled from 'styled-components'
-import { useLocation } from 'react-router-dom'
 
-const Button = ({ icon: Icon, url, isUserButton, showLabel, label }) => {
-  const location = useLocation()
-  const isActive = location.pathname === url
+const Button = ({ icon: Icon, isUserButton, showLabel, label }) => {
 
   return (
-    <Wrapper
-      className={`${isActive ? 'highlighted' : ''} ${
-        isUserButton ? 'user-btn' : ''
-      }`}
-    >
+    <Wrapper className={`${isUserButton ? 'user-btn' : ''}`}>
       <Icon className='icon' />
       {showLabel && <span className='btn'>{label}</span>}
     </Wrapper>

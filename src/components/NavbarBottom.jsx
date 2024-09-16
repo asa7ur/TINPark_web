@@ -1,30 +1,27 @@
 import styled from 'styled-components'
 import { links } from '../utils/constants'
 import Button from './Button'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom' // <-- Import NavLink instead of Link
 
 const NavbarBottom = () => {
   const navbarLinks = links.filter((link) => link.id > 1)
+
   return (
     <Wrapper>
       <div className='navbar'>
         {navbarLinks.map((link) => {
           const { id, icon, url, label } = link
           return (
-            <Link to={url} className='nav-button' key={id}>
-              <Button
-                url={url}
-                icon={icon}
-                showLabel={true}
-                label={label}
-              />
-            </Link>
+            <NavLink to={url} className='nav-button' key={id}>
+              <Button url={url} icon={icon} showLabel={true} label={label} />
+            </NavLink>
           )
         })}
       </div>
     </Wrapper>
   )
 }
+
 export default NavbarBottom
 
 const Wrapper = styled.nav`

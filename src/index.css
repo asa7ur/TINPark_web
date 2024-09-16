@@ -155,3 +155,7 @@ button {
 .highlighted {
     color: var(--primary-400);
 }
+
+.active{
+    color: var(--primary-400);
+}
