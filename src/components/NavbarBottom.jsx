@@ -12,7 +12,7 @@ const NavbarBottom = () => {
         {navbarLinks.map((link) => {
           const { id, icon, url, label } = link
           return (
-            <NavLink to={url} className='nav-button' key={id}>
+            <NavLink to={url} className='nav-button' key={id} end>
               <Button url={url} icon={icon} showLabel={true} label={label} />
             </NavLink>
           )
