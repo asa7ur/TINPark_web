@@ -1,15 +1,15 @@
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
-import { Principal, MisVehiculos, Zonas, Vehiculo, Error } from './pages'
+import { HomeLayout, Principal, MisVehiculos, Zonas, Vehiculo, Error } from './pages'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Principal />,
+    element: <HomeLayout />,
     errorElement: <Error />,
     children: [
       {
         index: true,
-        element: <Navigate to='/misvehiculos' />,
+        element: <Principal />,
       },
       {
         path: 'misvehiculos',

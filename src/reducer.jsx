@@ -5,7 +5,7 @@ import {
   SET_VIEWPORT_HEIGHT,
 } from './actions'
 
-const allReducer = (state, action) => {
+const globalReducer = (state, action) => {
   switch (action.type) {
     case SELECT_ZONE:
       return {
@@ -35,4 +35,4 @@ const allReducer = (state, action) => {
   }
 }
 
-export default allReducer
+export default globalReducer

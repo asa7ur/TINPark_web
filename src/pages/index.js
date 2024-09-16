@@ -1,3 +1,4 @@
+export { default as HomeLayout } from './HomeLayout'
 export { default as Principal } from './Principal'
 export { default as MisVehiculos } from './MisVehiculos'
 export { default as Zonas } from './Zonas'

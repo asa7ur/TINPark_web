@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { NavbarBottom, CarState } from '../components'
 import { vehicles, inside, outside } from '../utils/constants'
 import { FaLongArrowAltLeft } from 'react-icons/fa'
-import { useAllContext } from '../context'
+import { useGlobalContext } from '../context'
 import styled from 'styled-components'
 
 const Vehiculo = () => {
@@ -16,10 +16,10 @@ const Vehiculo = () => {
     changeState,
     setVehicle,
     selectZone,
-  } = useAllContext()
+  } = useGlobalContext()
 
   const handleClick = useCallback(() => {
-    navigate('/')
+    navigate('/misvehiculos')
   }, [navigate])
 
   useEffect(() => {

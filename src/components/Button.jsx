@@ -12,7 +12,7 @@ const Button = ({ icon: Icon, url, isUserButton, showLabel, label }) => {
       }`}
     >
       <Icon className='icon' />
-      {showLabel && <span className='button-label'>{label}</span>}
+      {showLabel && <span className='btn'>{label}</span>}
     </Wrapper>
   )
 }
@@ -27,13 +27,6 @@ const Wrapper = styled.div`
 
   .icon {
     font-size: 1.5rem;
-  }
-
-  .button-label {
-    font-size: 0.75rem;
-    margin-top: 0.25rem;
-    text-align: center;
-    color: var(--textColor);
   }
 
   &.user-btn {

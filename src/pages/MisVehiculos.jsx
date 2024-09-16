@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 import { NavbarTop, Vehicle, NavbarBottom } from '../components'
-import { useAllContext } from '../context'
+import { useGlobalContext } from '../context'
 
 const MisVehiculos = () => {
-  const { viewportHeight } = useAllContext()
+  const { viewportHeight } = useGlobalContext()
 
   return (
     <Wrapper style={{ height: `${viewportHeight}px` }}>
