@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { links } from '../utils/constants'
 import Button from './Button'
-import { NavLink } from 'react-router-dom' // <-- Import NavLink instead of Link
+import { NavLink } from 'react-router-dom'
 
 const NavbarBottom = () => {
   const navbarLinks = links.filter((link) => link.id > 1)
