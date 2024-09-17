@@ -1,5 +1,5 @@
-import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
-import { HomeLayout, Principal, MisVehiculos, Zonas, Vehiculo, Error } from './pages'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { HomeLayout, Principal, MisVehiculos, Zonas, Vehiculo, Error, Login, Registrarse } from './pages'
 
 const router = createBrowserRouter([
   {
@@ -22,6 +22,14 @@ const router = createBrowserRouter([
       {
         path: 'misvehiculos/:id',
         element: <Vehiculo />,
+      },
+      {
+        path: 'login',
+        element: <Login />,
+      },
+      {
+        path: 'registrarse',
+        element: <Registrarse />,
       },
     ],
   },

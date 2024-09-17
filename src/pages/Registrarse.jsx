@@ -2,38 +2,45 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { FormRow } from '../components'
 
-const Login = () => {
+const Register = () => {
   return (
     <Wrapper>
       <form className='form'>
-        <h3>Login</h3>
+        <h3>Registrarse</h3>
+        <FormRow type='text' name='nombre' defaultValue='Garik' />
+        <FormRow
+          type='text'
+          name='lastName'
+          labelText='Apellidos'
+          defaultValue='Asatryan'
+        />
         <FormRow type='email' name='correo electrónico' defaultValue='asa7ur@proton.me' />
         <FormRow type='password' name='contraseña' defaultValue='secret123' />
         <button type='submit' className='btn btn-block'>
-          Entrar
+          enviar
         </button>
         <p>
-          ¿Aún no eres miembro?
-          <Link to='/registrarse' className='member-btn'>
-            Registrarse
+          ¿Ya eres miembro?
+          <Link to='/login' className='member-btn'>
+            Entrar
           </Link>
         </p>
       </form>
     </Wrapper>
   )
 }
-export default Login
+export default Register
 
 const Wrapper = styled.section`
   min-height: 100vh;
   display: grid;
   align-items: center;
-  
+
   h3 {
     text-align: center;
     margin-bottom: 1.38rem;
   }
-  
+
   p {
     margin-top: 1rem;
     text-align: center;
